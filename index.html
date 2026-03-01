@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="Shabeeb's Full Stack Developer Portfolio showcasing projects in React, Python, and modern web design.">
-<meta name="keywords" content="Shabeeb, Portfolio, Web Developer, Full Stack, React, Python, JavaScript, Developer Portfolio">
-<meta name="author" content="Shabeeb">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="Shabeeb | Full Stack Developer Portfolio">
-<meta property="og:description" content="Portfolio of Shabeeb – a full stack developer skilled in React and Python, building responsive, modern web apps.">
-<meta property="og:url" content="https://shabeadtl.github.io/Portfolio_Shabeeb/">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://github.com/shabeadtl/Portfolio_Shabeeb/blob/4057769c6ad09e57a3086796e0c43d7880857ae8/ss.png">
-
+    <meta name="description"
+        content="Shabeeb's Full Stack Developer Portfolio showcasing projects in React, Python, and modern web design.">
+    <meta name="keywords"
+        content="Shabeeb, Portfolio, Web Developer, Full Stack, React, Python, JavaScript, Developer Portfolio">
+    <meta name="author" content="Shabeeb">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Shabeeb | Full Stack Developer Portfolio">
+    <meta property="og:description"
+        content="Portfolio of Shabeeb – a full stack developer skilled in React and Python, building responsive, modern web apps.">
+    <meta property="og:url" content="https://shabeadtl.github.io/Portfolio_Shabeeb/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://raw.githubusercontent.com/shabeadtl/Portfolio_Shabeeb/main/ss.png">
 
     <title>Shabeeb | Full Stack Developer Portfolio</title>
 
@@ -21,17 +23,31 @@
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-<link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-spinner"></div>
+        <div class="preloader-text">LOADING</div>
+    </div>
+
     <canvas id="particles" aria-hidden="true"></canvas>
+
+    <!-- Nav overlay for mobile -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <header>
         <nav>
             <div class="logo" aria-hidden="true">Shabeeb</div>
-            <ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="navMenu">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -44,162 +60,298 @@
     </header>
 
     <main>
+        <!-- HERO -->
         <section id="hero" aria-labelledby="hero-heading">
             <div class="hero-content">
-                <h1 id="hero-heading">Hi — I’m Shabeeb</h1>
-                <p>Full Stack Developer Intern specializing in React & Python. I build clean, functional web apps that
-                    solve real problems and deliver smooth user experiences.</p>
-                <div style="display:inline-flex;gap:.6rem;align-items:center">
+                <h1 id="hero-heading">Hi — I'm Shabeeb</h1>
+                <p class="hero-subtitle">Full Stack Developer Intern specializing in React & Python. I build clean,
+                    functional web apps that solve real problems and deliver smooth user experiences.</p>
+                <div class="typing-wrapper">
+                    <span class="typing-label">I build</span>
+                    <span class="typing-text" id="typingText"></span>
+                </div>
+                <div class="hero-buttons">
                     <button class="download-btn" onclick="downloadCV()" aria-label="Download CV">
                         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill="currentColor" d="M12 16l-6-6h4V4h4v6h4l-6 6zm-6 2h12v2H6z"></path>
                         </svg>
                         Download CV
                     </button>
-                    <a class="download-btn" href="#contact"
-                        style="text-decoration:none;color:var(--bg-1);font-weight:600;"
-                        aria-label="Contact me">Contact</a>
+                    <a class="download-btn outline" href="#contact" aria-label="Contact me">Contact Me</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" aria-labelledby="about-heading">
+        <!-- ABOUT -->
+        <section id="about" class="reveal" aria-labelledby="about-heading">
             <h2 id="about-heading" class="sub_head_main">About Me</h2>
             <div class="about-content">
-                <img src="./shabeeb_profile.png" alt="Shabeeb - Profile picture" class="imaage">
+                <img src="./shabeeb_profile.png" alt="Shabeeb - Profile picture">
                 <div>
-                    <p> I’m a <b style="font-size: 1.1rem;">Full Stack Developer Intern</b> with a BSc in Computer
-                        Science, specializing in <br>
-                        <b style="font-size: 1.1rem;">React</b> + <b style="font-size: 1.1rem;">Python</b>. I build
-                        scalable, maintainable web applications with a strong focus on UX, performance,
-                        and clean code. I enjoy turning real-world problems into practical digital solutions, whether
-                        it’s a small utility app or a full-featured project.
+                    <p>I'm a <b>Full Stack Developer Intern</b> with a BSc in Computer Science, specializing in
+                        <b>React</b> + <b>Python</b>. I build scalable, maintainable web applications with a strong
+                        focus on UX, performance, and clean code. I enjoy turning real-world problems into practical
+                        digital solutions.
                     </p>
                     <p>Curiosity drives me — I love learning new tools, experimenting with modern frameworks, and
-                        continuously improving my coding skills. Through my internship, I’ve gained hands-on experience
+                        continuously improving my coding skills. Through my internship, I've gained hands-on experience
                         in frontend development with React, state management, API integrations, and backend development
                         with Python/Django.</p>
                     <p>I have also completed relevant certifications and projects that strengthened my skills in web
                         development, problem-solving, and application design. My achievements include leading the K-CNCT
-                        project, developing an E-Commerce Application using Redux, creating the Receipt Generator App,
-                        conducting workshops on portfolio deployment, and building tools that solve real-world problems
-                        efficiently.</p>
+                        project, developing an E-Commerce Application using Redux, building a CRM system, creating the
+                        Receipt Generator App, and conducting workshops on portfolio deployment.</p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="9">0</div>
+                    <div class="stat-label">Months Internship</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-target="20">0</div>
+                    <div class="stat-label">Technologies</div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" aria-labelledby="skills-heading">
-            <h1 id="skills-heading">My Skills</h1>
-            <h2 class="skill-sub_head">Frontend:</h2>
-            <div class="skills-grid">
-                <div class="skill-item"><img src="./assets/skills/html.png" alt="" class="skill-image">
-                    <h2>HTML</h2>
-                    <p>Structuring and building web pages with HTML5</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/css.png" alt="" class="skill-image">
-                    <h2>CSS</h2>
-                    <p>Styling responsive and modern web pages with CSS3.</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/js.svg" alt="" class="skill-image">
-                    <h2>JavaScript</h2>
-                    <p>Building interactive and dynamic web experiences with JavaScript</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/ts.svg" alt="" class="skill-image">
-                    <h2>Typescript</h2>
-                    <p>Building type-safe and scalable web apps with TypeScript</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/react.svg" alt="" class="skill-image">
+        <!-- SKILLS -->
+        <section id="skills" class="reveal" aria-labelledby="skills-heading">
+            <h2 id="skills-heading" class="sub_head_main">My Skills</h2>
+
+            <h3 class="skill-sub_head">Frontend Development</h3>
+            <div class="skills-grid reveal-children">
+                <div class="skill-item">
+                    <img src="./assets/skills/react.svg" alt="React.js logo" class="skill-image">
                     <h2>React.js</h2>
-                    <p>Creating dynamic and responsive UIs with React.js</p>
+                    <p>Components, hooks, state & lifecycle</p>
+                    <span class="skill-level advanced">Advanced</span>
                 </div>
-                <div class="skill-item"><img src="./assets/skills/redux.svg" alt="" class="skill-image">
+                <div class="skill-item">
+                    <img src="./assets/skills/nextjs.svg" alt="Next.js logo" class="skill-image">
+                    <h2>Next.js</h2>
+                    <p>SSR, routing & full-stack React</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/redux.svg" alt="Redux logo" class="skill-image">
                     <h2>Redux</h2>
-                    <p>Managing state efficiently in React apps with Redux</p>
+                    <p>Global state management</p>
+                    <span class="skill-level advanced">Advanced</span>
                 </div>
-                <div class="skill-item"><img src="./assets/skills/boots.svg" alt="" class="skill-image">
+                <div class="skill-item">
+                    <img src="./assets/skills/js.svg" alt="JavaScript logo" class="skill-image">
+                    <h2>JavaScript</h2>
+                    <p>ES6+, async/await, closures, DOM</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/ts.svg" alt="TypeScript logo" class="skill-image">
+                    <h2>TypeScript</h2>
+                    <p>Type-safe & scalable applications</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/html.png" alt="HTML5 logo" class="skill-image">
+                    <h2>HTML5</h2>
+                    <p>Semantic markup & web standards</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/css.png" alt="CSS3 logo" class="skill-image">
+                    <h2>CSS3</h2>
+                    <p>Responsive design, Flexbox & Grid</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/boots.svg" alt="Bootstrap logo" class="skill-image">
                     <h2>Bootstrap</h2>
-                    <p>Building responsive and mobile-friendly layouts with Bootstrap.</p>
+                    <p>Responsive grid & UI components</p>
+                    <span class="skill-level advanced">Advanced</span>
                 </div>
-                <div class="skill-item"><img src="./assets/skills/material.svg" alt="" class="skill-image">
+                <div class="skill-item">
+                    <img src="./assets/skills/material.svg" alt="Material UI logo" class="skill-image">
                     <h2>Material UI</h2>
-                    <p>Designing modern and interactive UIs with Material UI</p>
-                </div>
-
-            </div>
-
-            <h2 class="skill-sub_head" style="margin-top: 35px;">Backend & APIs:</h2>
-            <div class="skills-grid-backend">
-                <div class="skill-item"><img src="./assets/skills/python.svg" alt="" class="skill-image">
-                    <h2>Python (basics)</h2>
-                    <p>Developing backend logic and web apps</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/api.png" alt="" class="skill-image">
-                    <h2>REST Api integration</h2>
-                    <p>Integrating and consuming APIs</p>
-                </div>
-                <div class="skill-item"><img src="./assets/skills/php.svg" alt="" class="skill-image">
-                    <h2>PHP (basics)</h2>
-                    <p>Simple backend scripting</p>
+                    <p>Pre-built React component library</p>
+                    <span class="skill-level intermediate">Intermediate</span>
                 </div>
             </div>
 
-            <h2 class="skill-sub_head" style="margin-top: 35px;">Database:</h2>
-            <div class="database_skill">
-                <div class="skill-item"><img src="./assets/skills/mysql.svg" alt="" class="skill-image">
-                    <h2>MySQL (Basic)</h2>
-                    <p>Storing and managing data</p>
+            <h3 class="skill-sub_head" style="margin-top: 2rem;">Backend Development</h3>
+            <div class="skills-grid-backend reveal-children">
+                <div class="skill-item">
+                    <img src="./assets/skills/python.svg" alt="Python logo" class="skill-image">
+                    <h2>Python</h2>
+                    <p>Core Python, OOP & scripting</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/django.svg" alt="Django logo" class="skill-image">
+                    <h2>Django</h2>
+                    <p>Web framework & app development</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/api.png" alt="REST API icon" class="skill-image">
+                    <h2>REST APIs</h2>
+                    <p>API design, integration & testing</p>
+                    <span class="skill-level advanced">Advanced</span>
                 </div>
             </div>
 
-            <h2 class="skill-sub_head" style="margin-top: 35px;">Tools & Platforms:</h2>
-            <div class="skills-grid-backend">
-                <div class="skill-item"><img src="./assets/skills/git.svg" alt="" class="skill-image">
-                    <h2>Git</h2>
-                    <p>Version control and collaboration</p>
+            <h3 class="skill-sub_head" style="margin-top: 2rem;">Database</h3>
+            <div class="database_skill reveal-children">
+                <div class="skill-item">
+                    <img src="./assets/skills/postgresql.svg" alt="PostgreSQL logo" class="skill-image">
+                    <h2>PostgreSQL</h2>
+                    <p>Advanced RDBMS & cloud databases</p>
+                    <span class="skill-level advanced">Advanced</span>
                 </div>
-                <div class="skill-item"><img src="./assets/skills/android.png" alt="" class="skill-image">
+                <div class="skill-item">
+                    <img src="./assets/skills/mysql.svg" alt="MySQL logo" class="skill-image">
+                    <h2>MySQL</h2>
+                    <p>SQL queries & relational design</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+            </div>
+
+            <h3 class="skill-sub_head" style="margin-top: 2rem;">Tools & DevOps</h3>
+            <div class="skills-grid-backend reveal-children">
+                <div class="skill-item">
+                    <img src="./assets/skills/git.svg" alt="Git logo" class="skill-image">
+                    <h2>Git & GitHub</h2>
+                    <p>Version control, branches & PRs</p>
+                    <span class="skill-level advanced">Advanced</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/cloud.svg" alt="Cloud icon" class="skill-image">
+                    <h2>Cloud Computing</h2>
+                    <p>VMs, deployment & hosting</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/domain.svg" alt="Hosting icon" class="skill-image">
+                    <h2>Domain & Hosting</h2>
+                    <p>Domain registration & deployment</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/android.png" alt="Android Studio logo" class="skill-image">
                     <h2>Android Studio</h2>
-                    <p>Mobile app development environment</p>
+                    <p>Mobile app development</p>
+                    <span class="skill-level basic">Basic</span>
                 </div>
-                <div class="skill-item"><img src="./assets/skills/terminal.svg" alt="" class="skill-image">
-                    <h2>Shell Commands (basic)</h2>
-                    <p>Command-line operations</p>
+                <div class="skill-item">
+                    <img src="./assets/skills/terminal.svg" alt="Terminal icon" class="skill-image">
+                    <h2>Terminal / CLI</h2>
+                    <p>Shell commands & scripting</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+            </div>
+
+            <h3 class="skill-sub_head" style="margin-top: 2rem;">Other Languages</h3>
+            <div class="skills-grid-backend reveal-children">
+                <div class="skill-item">
+                    <img src="./assets/skills/c.svg" alt="C language logo" class="skill-image">
+                    <h2>C</h2>
+                    <p>Systems programming & logic</p>
+                    <span class="skill-level intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/java.svg" alt="Java logo" class="skill-image">
+                    <h2>Java</h2>
+                    <p>OOP & application development</p>
+                    <span class="skill-level basic">Basic</span>
+                </div>
+                <div class="skill-item">
+                    <img src="./assets/skills/php.svg" alt="PHP logo" class="skill-image">
+                    <h2>PHP</h2>
+                    <p>Server-side scripting</p>
+                    <span class="skill-level intermediate">Intermediate</span>
                 </div>
             </div>
         </section>
 
-        <section id="projects" aria-labelledby="projects-heading">
+        <!-- PROJECTS -->
+        <section id="projects" class="reveal" aria-labelledby="projects-heading">
             <h2 id="projects-heading" class="sub_head_main">Projects</h2>
-            <div class="project-grid">
+            <div class="project-grid reveal-children">
+
+                <!-- CRM Project -->
+                <div class="project-card">
+                    <img src="./assets/CRM.png" alt="Project screenshot — AI-Powered CRM">
+                    <div class="project-info">
+                        <h3>AI-Powered CRM System</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag purple">Python</span>
+                            <span class="tech-tag purple">Django</span>
+                            <span class="tech-tag orange">PostgreSQL</span>
+                        </div>
+                        <p>A full-featured CRM system with lead management, deal tracking, ticket support, team
+                            performance dashboards, and AI-powered features. Built with React + TypeScript on the
+                            frontend and Django REST Framework on the backend.</p>
+                        <a href="https://github.com/shabeadtl/FULLSTACK-CRM-APP-REACT-DJANGO" target="_blank" class="github-btn">View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- K-CNCT -->
                 <div class="project-card">
                     <img src="./assets/kcnct.jpeg" alt="Project screenshot — K-CNCT">
                     <div class="project-info">
                         <h3>K-CNCT (Community Management)</h3>
-                        <p>Full-stack community management system built with Django (backend) and Flutter (mobile). Led
-                            the team as project lead — implemented authentication, role-based access, and notifications.
-                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag purple">Django</span>
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag orange">SQLite</span>
+                        </div>
+                        <p>Full-stack community management system built with Django (backend) and Flutter (mobile).
+                            Led the team as project lead — implemented authentication, role-based access, and
+                            notifications.</p>
                     </div>
                 </div>
+
+                <!-- E-Commerce -->
                 <div class="project-card">
-                    <img src="./assets/ecom.png" alt="Project screenshot — Portfolio">
+                    <img src="./assets/ecom.png" alt="Project screenshot — E-Commerce App">
                     <div class="project-info">
                         <h3>E-Commerce Application</h3>
-                        <p>Fully functional e-commerce application built with React and Redux, featuring responsive UI,
-                            API integration for dynamic product details, and seamless state management on the frontend.
-                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <p>Fully functional e-commerce app with responsive UI, API integration for dynamic product
+                            details, cart management, and seamless state management using Redux.</p>
                         <a href="https://github.com/shabeadtl/E-Commerce-Application---React-Redux" target="_blank"
                             class="github-btn">View on GitHub</a>
-
                     </div>
                 </div>
+
+                <!-- Receipt Generator -->
                 <div class="project-card">
-                    <img src="./assets/reciept.png" alt="Project screenshot — Tooling">
+                    <img src="./assets/reciept.png" alt="Project screenshot — Receipt Generator">
                     <div class="project-info">
-                        <h3>Reciept Generator App</h3>
-                        <p>A lightweight HTML, CSS, and JavaScript web app that automates rent receipt generation with
-                            smart form logic, auto-generated receipt numbers, and a fully responsive design for quick,
-                            paperless rent management.
-                        </p>
+                        <h3>Receipt Generator App</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <p>A lightweight web app that automates rent receipt generation with smart form logic,
+                            auto-generated receipt numbers, and a fully responsive design for quick, paperless rent
+                            management.</p>
                         <a href="https://github.com/shabeadtl/Receipt-Generator-App-Rental-Management-.git"
                             target="_blank" class="github-btn">View on GitHub</a>
                     </div>
@@ -207,99 +359,141 @@
             </div>
         </section>
 
-        <section id="experience" aria-labelledby="experience-heading">
+        <!-- EXPERIENCE -->
+        <section id="experience" class="reveal" aria-labelledby="experience-heading">
             <h2 id="experience-heading" class="sub_head_main">Experience</h2>
             <div class="experience-grid">
-
                 <div class="experience-card">
-                    <img src="./assets/react+python.jpg" alt="Internship Screenshot or Logo">
-                    <div class="experience-info">
+                    <img src="./assets/react+python.jpg" alt="Internship Logo — React + Python">
+                    <div>
                         <h2>AI-Powered Full Stack Developer Intern</h2>
-                        <p>Currently engaged in a 6-month internship focused on AI-powered full-stack development,
+                        <h3
+                            style="color: var(--accent-1); font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem;">
+                            May 2025 – Present · Upcode Software Labs</h3>
+                        <p>Engaged in an ongoing internship focused on AI-powered full-stack development,
                             building scalable, maintainable web applications with React.js, TypeScript, Python,
                             Django/FastAPI, and PostgreSQL. Designed and implemented responsive, dynamic UIs, managed
                             application state with Hooks & Context API, and integrated REST APIs for seamless backend
                             communication. Explored AI-powered features using Python and OpenAI API, while applying
                             Git/GitHub version control and best development practices. Gained practical experience in
-                            backend development, database management, cloud deployment workflows, and problem-solving,
-                            turning real-world challenges into functional, efficient digital solutions.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- certifications -->
-
-        <section id="certifications" class="text-white py-16">
-            <div class="max-w-5xl mx-auto px-6">
-                <h2 class="sub_head_main">Certifications & Training</h2>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Certification Card -->
-                    <div class="certification-card">
-                        <h2>Flutter Internship Training</h2>
-                        <h3>Trycode Innovations | Mar 2025</h3>
-                        <p>Hands-on training on Flutter and Dart for building cross-platform apps with modern UI and API
-                            integration.</p>
-                    </div>
-
-                    <div class="certification-card">
-                        <h2>K-Connect Academic Project</h2>
-                        <h3>Nexus Technologies | Feb 2025</h3>
-                        <p>Full-stack community management system built with Django (backend) and Flutter (mobile). Led
-                            the team as project head.</p>
-                    </div>
-
-                    <div class="certification-card">
-                        <h2>Upcode Bootcamp in Software Development</h2>
-                        <h3>Upcode Software Labs | Feb 2024</h3>
-                        <p>Practical web development training using HTML, CSS, and JavaScript — focused on clean UI and
-                            responsive design.</p>
-                    </div>
-
-                    <div class="certification-card">
-                        <h2>Cybersecurity Internship</h2>
-                        <h3>TechbyHeart, Kochi | Dec 2023</h3>
-                        <p>Explored ethical hacking, system protection, and vulnerability testing under real-world
-                            mentorship.</p>
+                            backend development, database management, cloud deployment workflows, and problem-solving.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- CERTIFICATIONS -->
+        <section id="certifications" class="reveal" aria-labelledby="certifications-heading">
+            <h2 id="certifications-heading" class="sub_head_main">Courses & Certifications</h2>
+            <div class="certifications-grid reveal-children">
+                <div class="certification-card">
+                    <h2>AI Powered Full-Stack Development</h2>
+                    <h3>Upcode Software Labs | 2025</h3>
+                    <p>Intensive training in React + Python full-stack development with AI-powered features, REST API
+                        integration, and cloud deployment.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Upcode Bootcamp in Software Development</h2>
+                    <h3>Upcode Software Labs | Feb 2024</h3>
+                    <p>Practical web development training using HTML, CSS, and JavaScript — focused on clean UI and
+                        responsive design.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Front-End Development Workshop</h2>
+                    <h3>Prosevo Technologies | 2024</h3>
+                    <p>Workshop covering modern frontend development practices, responsive design patterns, and
+                        interactive UI development.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Cyber Security & Ethical Hacking</h2>
+                    <h3>TechByHeart, Kochi | Dec 2023</h3>
+                    <p>Explored ethical hacking, system protection, and vulnerability testing under real-world
+                        mentorship.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Cyber Security Training Program</h2>
+                    <h3>TechByHeart | 2023</h3>
+                    <p>Comprehensive training on cybersecurity fundamentals, network security, and threat analysis
+                        techniques.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Flutter Internship Training</h2>
+                    <h3>Trycode Innovations | Mar 2025</h3>
+                    <p>Hands-on training on Flutter and Dart for building cross-platform apps with modern UI and API
+                        integration.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>K-Connect Academic Project</h2>
+                    <h3>Nexus Technologies | Feb 2025</h3>
+                    <p>Full-stack community management system built with Django (backend) and Flutter (mobile). Led
+                        the team as project head.</p>
+                </div>
+                <div class="certification-card">
+                    <h2>Certificate of Merit (Grade A)</h2>
+                    <h3>KITE Kerala</h3>
+                    <p>Recognized for outstanding academic performance and technical skill development in IT education
+                        programs.</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- AWARDS & ACHIEVEMENTS -->
+        <section id="awards" class="reveal" aria-labelledby="awards-heading">
+            <h2 id="awards-heading" class="sub_head_main">Awards & Achievements</h2>
+            <div class="awards-grid reveal-children">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-content">
+                        <h3>Best Performer — Hackathon 2025</h3>
+                        <p class="award-org">Upcode Software Labs</p>
+                        <p>Built a fully responsive OTT platform homepage in 2 hours (HTML, CSS) as a 2-member team;
+                            recognized for speed, creativity, and active participation.</p>
+                    </div>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🎓</div>
+                    <div class="award-content">
+                        <h3>Workshop Facilitator — Portfolio Website Hosting</h3>
+                        <p class="award-org">Upcode Software Labs</p>
+                        <p>Co-hosted a hands-on session guiding participants to deploy portfolio websites to live URLs
+                            using Firebase.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-
-
-
-        <section id="contact" aria-labelledby="contact-heading">
+        <!-- CONTACT -->
+        <section id="contact" class="reveal" aria-labelledby="contact-heading">
             <h2 id="contact-heading" class="sub_head_main">Contact Me</h2>
-
             <div class="contact-grid">
-                <!-- Contact details -->
                 <div class="contact-info">
-                    <p>Want to collaborate? Send me a message.</p>
+                    <p>Want to collaborate or have a project in mind? Let's connect!</p>
 
-                    <div style="margin-top:1rem;">
-                        <strong>Email</strong>
+                    <div>
+                        <strong style="color: var(--accent-1);">Email</strong>
                         <div style="margin-top:.4rem;"><a href="mailto:shabeadattil2@gmail.com"
                                 style="color:#cfeff3; text-decoration:none;">shabeadattil2@gmail.com</a></div>
                     </div>
 
-                    <div class="social-links" aria-label="social links">
-                        <a href="https://github.com/shabeadtl" target="_blank"><img src="./assets/git.svg" alt=""
-                                class="cnct-logo"></a>
-                        <a href="https://www.linkedin.com/in/shabeebadtl" target="blank"><img
-                                src="./assets/linkedin.svg" alt=" " class="cnct-logo"></a>
-                        <a href="https://www.instagram.com/adtl_shabeeb._?igsh=MXVjd24xM3dlem8ycQ=="
-                            target="_blank"><img src="./assets/insta.svg" alt=" " class="cnct-logo"></a>
-                        <a href="https://wa.me/919072063390?text=Hello%20Shabeeb!" target="_blank"><img
-                                src="./assets/whatsapp.png" alt=" " class="cnct-logo"></a>
+                    <div class="social-links" aria-label="Social media links">
+                        <a href="https://github.com/shabeadtl" target="_blank" aria-label="GitHub profile">
+                            <img src="./assets/git.svg" alt="GitHub" class="cnct-logo">
+                        </a>
+                        <a href="https://www.linkedin.com/in/shabeebadtl" target="_blank" aria-label="LinkedIn profile">
+                            <img src="./assets/linkedin.svg" alt="LinkedIn" class="cnct-logo">
+                        </a>
+                        <a href="https://www.instagram.com/adtl_shabeeb._?igsh=MXVjd24xM3dlem8ycQ==" target="_blank"
+                            aria-label="Instagram profile">
+                            <img src="./assets/insta.svg" alt="Instagram" class="cnct-logo">
+                        </a>
+                        <a href="https://wa.me/919072063390?text=Hello%20Shabeeb!" target="_blank"
+                            aria-label="WhatsApp chat">
+                            <img src="./assets/whatsapp.png" alt="WhatsApp" class="cnct-logo">
+                        </a>
                     </div>
                 </div>
 
-                <!-- Contact form -->
                 <div>
                     <form id="contactForm" class="contact-form" aria-label="Contact form">
                         <div class="form-group">
@@ -307,21 +501,18 @@
                             <input id="name" name="name" type="text" placeholder="Your name" required
                                 aria-required="true" />
                         </div>
-
                         <div class="form-group">
                             <label for="email" style="display:none;">Email</label>
                             <input id="email" name="email" type="email" placeholder="Your email" required
                                 aria-required="true" />
                         </div>
-
                         <div class="form-group">
                             <label for="message" style="display:none;">Message</label>
-                            <textarea id="message" name="message" placeholder="Your message" rows="6" required
+                            <textarea id="message" name="message" placeholder="Your message" rows="5" required
                                 aria-required="true"></textarea>
                         </div>
-
                         <div style="display:flex;gap:.6rem;align-items:center;">
-                            <button type="submit" class="btn" aria-label="Send message">Send</button>
+                            <button type="submit" class="btn" aria-label="Send message">Send Message</button>
                             <div id="contactStatus" class="contact-success" role="status" aria-live="polite"></div>
                         </div>
                     </form>
@@ -331,38 +522,85 @@
     </main>
 
     <footer>
-        <div>&copy; <span id="year"></span> Shabeeb — Built with ❤️</div>
+        <div>&copy; <span id="year"></span> <span>Shabeeb</span> — Built with ❤️</div>
+        <div class="footer-version">v2.0</div>
     </footer>
 
-    <script>
-        
-        const RECIPIENT_EMAIL = 'shabeadattil2@gmail.com';
-        const CV_PATH = 'Shabeeb_Adattil.pdf';
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
+    <script>
+        // ===== CONFIG =====
+        const RECIPIENT_EMAIL = 'shabeadattil2@gmail.com';
+        const TYPING_WORDS = [
+            'React Applications',
+            'Django Backends',
+            'REST APIs',
+            'CRM Systems',
+            'Next.js Apps',
+            'Clean UIs',
+            'Cloud Deployments'
+        ];
+
+        // ===== PRELOADER =====
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('hidden');
+            }, 800);
+        });
+
+        // ===== CV DOWNLOAD =====
         function downloadCV() {
             const link = document.createElement('a');
-            link.href = 'Shabeeb_Adattil_Resume.pdf';
-            link.download = 'Shabeeb_Adattil_Resume.pdf';
+            link.href = 'Shabeeb Adattil  Full stack developer Intern  V2.pdf';
+            link.download = 'Shabeeb Adattil  Full stack developer Intern  V2.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
 
-        
+        // ===== SMOOTH SCROLL =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                
                 const target = this.getAttribute('href');
                 if (!target.startsWith('#')) return;
                 const el = document.querySelector(target);
                 if (el) {
                     e.preventDefault();
                     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // close mobile menu if open
+                    navMenu.classList.remove('show');
+                    hamburger.classList.remove('open');
+                    navOverlay.classList.remove('show');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
                 }
             });
         });
 
-        
+        // ===== HAMBURGER MENU =====
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navOverlay = document.getElementById('navOverlay');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = navMenu.classList.toggle('show');
+            hamburger.classList.toggle('open');
+            navOverlay.classList.toggle('show');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('show');
+            hamburger.classList.remove('open');
+            navOverlay.classList.remove('show');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+
+        // ===== CONTACT FORM =====
         const contactForm = document.getElementById('contactForm');
         const contactStatus = document.getElementById('contactStatus');
 
@@ -379,36 +617,150 @@
 
             const subject = `Portfolio contact from ${name}`;
             const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
-
-            
             const mailto = `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${body}`;
-            
+
             window.location.href = mailto;
-            showStatus('Opening mail client... If nothing opens, email: ' + RECIPIENT_EMAIL, false);
+            showStatus('Opening mail client...', false);
             contactForm.reset();
         });
 
         function showStatus(text, isError = false) {
             contactStatus.style.display = 'inline-block';
             contactStatus.textContent = text;
-            contactStatus.style.background = isError ? 'rgba(255,50,50,0.06)' : 'rgba(0,220,220,0.06)';
-            contactStatus.style.borderColor = isError ? 'rgba(255,50,50,0.06)' : 'rgba(0,255,255,0.06)';
+            contactStatus.style.background = isError ? 'rgba(255,50,50,0.08)' : 'rgba(0,220,220,0.08)';
+            contactStatus.style.borderColor = isError ? 'rgba(255,50,50,0.15)' : 'rgba(0,255,255,0.15)';
             setTimeout(() => {
                 contactStatus.style.display = 'none';
-            }, 6000);
+            }, 5000);
         }
 
-       
+        // ===== YEAR =====
         document.getElementById('year').textContent = new Date().getFullYear();
 
-       
+        // ===== TYPING EFFECT =====
+        const typingEl = document.getElementById('typingText');
+        let wordIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        let typingDelay = 120;
+
+        function typeWord() {
+            const current = TYPING_WORDS[wordIdx];
+
+            if (!isDeleting) {
+                typingEl.textContent = current.substring(0, charIdx + 1);
+                charIdx++;
+                if (charIdx === current.length) {
+                    isDeleting = true;
+                    typingDelay = 2000; // pause before deleting
+                } else {
+                    typingDelay = 100 + Math.random() * 60;
+                }
+            } else {
+                typingEl.textContent = current.substring(0, charIdx - 1);
+                charIdx--;
+                if (charIdx === 0) {
+                    isDeleting = false;
+                    wordIdx = (wordIdx + 1) % TYPING_WORDS.length;
+                    typingDelay = 400;
+                } else {
+                    typingDelay = 50;
+                }
+            }
+            setTimeout(typeWord, typingDelay);
+        }
+        typeWord();
+
+        // ===== SCROLL REVEAL =====
+        const revealEls = document.querySelectorAll('.reveal, .reveal-children');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // ===== ACTIVE NAV on SCROLL =====
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        function updateActiveNav() {
+            const scrollY = window.scrollY + 120;
+            sections.forEach(section => {
+                const top = section.offsetTop;
+                const height = section.offsetHeight;
+                const id = section.getAttribute('id');
+                const link = document.querySelector(`nav a[href="#${id}"]`);
+
+                if (link) {
+                    if (scrollY >= top && scrollY < top + height) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+        }
+        window.addEventListener('scroll', updateActiveNav, { passive: true });
+        updateActiveNav();
+
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ===== COUNTER ANIMATION =====
+        const counters = document.querySelectorAll('.stat-number');
+        let countersDone = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersDone) {
+                    countersDone = true;
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 1500;
+                        const step = target / (duration / 30);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.ceil(current) + '+';
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ===== PARTICLE BACKGROUND =====
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
 
         let W = canvas.width = window.innerWidth;
         let H = canvas.height = window.innerHeight;
 
-        const particleCount = Math.min(120, Math.round((W * H) / 90000)); 
+        const particleCount = Math.min(100, Math.round((W * H) / 110000));
         const particles = [];
 
         function rand(min, max) { return Math.random() * (max - min) + min; }
@@ -418,15 +770,15 @@
             reset(init = false) {
                 this.x = rand(0, W);
                 this.y = init ? rand(0, H) : rand(0, H);
-                this.size = rand(0.8, 2.6);
-                this.speedX = rand(-0.35, 0.35);
-                this.speedY = rand(-0.35, 0.35);
-                this.alpha = rand(0.15, 0.6);
+                this.size = rand(0.8, 2.4);
+                this.speedX = rand(-0.3, 0.3);
+                this.speedY = rand(-0.3, 0.3);
+                this.alpha = rand(0.12, 0.5);
             }
             update() {
                 this.x += this.speedX;
                 this.y += this.speedY;
-                this.size -= 0.004;
+                this.size -= 0.003;
                 if (this.size <= 0.25) this.reset();
                 if (this.x < -10) this.x = W + 10;
                 if (this.x > W + 10) this.x = -10;
@@ -452,13 +804,26 @@
                 particles[i].update();
                 particles[i].draw();
             }
-            requestAnimationFrame(animateParticles);
+            animFrameId = requestAnimationFrame(animateParticles);
         }
 
+        let animFrameId;
         initParticles();
         animateParticles();
 
-        // Handle resize
+        // mobile only: pause particles during scroll to free GPU
+        if (window.innerWidth <= 880) {
+            let scrollTimer;
+            window.addEventListener('scroll', () => {
+                if (animFrameId) {
+                    cancelAnimationFrame(animFrameId);
+                    animFrameId = null;
+                }
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(animateParticles, 200);
+            }, { passive: true });
+        }
+
         window.addEventListener('resize', () => {
             W = canvas.width = window.innerWidth;
             H = canvas.height = window.innerHeight;
