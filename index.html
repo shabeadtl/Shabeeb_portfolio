@@ -86,29 +86,26 @@
         <!-- ABOUT -->
         <section id="about" class="reveal" aria-labelledby="about-heading">
             <h2 id="about-heading" class="sub_head_main">About Me</h2>
-            <div class="about-content">
-                <img src="./shabeeb_profile.png" alt="Shabeeb - Profile picture">
-                <div>
-                    <p>I'm a <b>Full Stack Developer Intern</b> with a BSc in Computer Science, specializing in
-                        <b>React</b> + <b>Python</b>. I build scalable, maintainable web applications with a strong
-                        focus on UX, performance, and clean code. I enjoy turning real-world problems into practical
-                        digital solutions.
-                    </p>
-                    <p>Curiosity drives me — I love learning new tools, experimenting with modern frameworks, and
-                        continuously improving my coding skills. Through my internship, I've gained hands-on experience
-                        in frontend development with React, state management, API integrations, and backend development
-                        with Python/Django.</p>
-                    <p>I have also completed relevant certifications and projects that strengthened my skills in web
-                        development, problem-solving, and application design. My achievements include leading the K-CNCT
-                        project, developing an E-Commerce Application using Redux, building a CRM system, creating the
-                        Receipt Generator App, and conducting workshops on portfolio deployment.</p>
+<div class="about-content">
+    <img src="shabeeb_profile.png" alt="Shabeeb" />
+    <div class="about-text">
+                        <p> I'm a Full Stack Developer specializing in React + Python/Django, focused on building 
+                        scalable, maintainable web applications with clean code and strong UX.</p>
+
+                        <p> I've led and shipped multiple full-stack projects — including a CRM system, a community 
+                        management platform, and a complete e-commerce application — gaining hands-on experience 
+                        in frontend architecture, REST APIs, and team leadership.</p>
+
+                        <p>Currently seeking full-stack developer roles where I can contribute to 
+real-world products — bringing together my experience in React, Django, 
+and team collaboration to build solutions that matter.</p>
                 </div>
             </div>
 
             <!-- Stats -->
             <div class="stats-bar">
                 <div class="stat-item">
-                    <div class="stat-number" data-target="4">0</div>
+                    <div class="stat-number" data-target="6">0</div>
                     <div class="stat-label">Projects</div>
                 </div>
                 <div class="stat-item">
@@ -288,6 +285,30 @@
             <h2 id="projects-heading" class="sub_head_main">Projects</h2>
             <div class="project-grid reveal-children">
 
+                <!-- RentFlow -->
+                <div class="project-card">
+                    <img src="./assets/RentFlow.png" alt="RentFlow-Tenant Rent Management">
+                    <div class="project-info">
+                        <h3>RentFlow - Tenant Rent Management</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag purple">Supabase</span>
+                            <span class="tech-tag purple">Tailwind CSS</span>
+                            <span class="tech-tag orange">PostgreSQL</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag purple">RBAC</span>
+                        </div>
+                        <p>A full-stack rent management platform with property tracking, payment management, analytics
+                            dashboards, and role-based access — built with React, FastAPI, and PostgreSQL(Supabase).</p>
+                        <a href="https://github.com/shabeadtl/RentFlow---Tenant-Rent-Management" target="_blank"
+                            class="github-btn">View on GitHub</a>
+                        <a href="https://rent-flow-tenant-rent-management.vercel.app/" target="_blank" class="view">View
+                            Live</a>
+                    </div>
+                </div>
+
+
                 <!-- CRM Project -->
                 <div class="project-card">
                     <img src="./assets/CRM.png" alt="Project screenshot — AI-Powered CRM">
@@ -300,14 +321,39 @@
                             <span class="tech-tag purple">Django</span>
                             <span class="tech-tag orange">PostgreSQL</span>
                         </div>
-                        <p>A full-featured CRM system with lead management, deal tracking, ticket support, team
-                            performance dashboards, and AI-powered features. Built with React + TypeScript on the
-                            frontend and Django REST Framework on the backend.</p>
+                        <p>A full-stack CRM with lead management, deal tracking, ticket support, and team performance
+                            dashboards — built with React, TypeScript, and Django REST Framework.Led the team as project
+                            lead, overseeing architecture, implementation, and delivery.</p>
                         <a href="https://github.com/shabeadtl/FULLSTACK-CRM-APP-REACT-DJANGO" target="_blank"
                             class="github-btn">View on GitHub</a>
                     </div>
                 </div>
 
+
+                <!-- SHOP.CO -->
+                <div class="project-card">
+                    <img src="./assets/shop.co.png" alt="SHOP.CO">
+                    <div class="project-info">
+                        <h3>SHOP.CO</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux Toolkit</span>
+                            <span class="tech-tag purple">Django</span>
+                            <span class="tech-tag purple">DRF</span>
+                            <span class="tech-tag orange">PostgreSQL</span>
+                            <span class="tech-tag">JWT</span>
+                            <span class="tech-tag purple">Vite</span>
+                            <span class="tech-tag orange">Axios</span>
+                            <span class="tech-tag purple">Python</span>
+                        </div>
+                        <p>A full-stack e-commerce platform built solo from a Figma design during internship —
+                            featuring product listing with filtering, cart & checkout, order management, JWT
+                            authentication, and an admin panel. Built with React, Redux Toolkit, Django REST
+                            Framework, and PostgreSQL.</p>
+                        <a href="https://github.com/shabeadtl/FULLSTACK-CRM-APP-REACT-DJANGO" target="_blank"
+                            class="github-btn">View on GitHub</a>
+                    </div>
+                </div>
                 <!-- K-CNCT -->
                 <div class="project-card">
                     <img src="./assets/kcnct.jpeg" alt="Project screenshot — K-CNCT">
@@ -318,9 +364,8 @@
                             <span class="tech-tag">Flutter</span>
                             <span class="tech-tag orange">SQLite</span>
                         </div>
-                        <p>Full-stack community management system built with Django (backend) and Flutter (mobile).
-                            Led the team as project lead — implemented authentication, role-based access, and
-                            notifications.</p>
+                        <p>A cross-platform community management system built with Django and Flutter — spearheaded as
+                            team lead, delivering authentication, role-based access, and push notifications..</p>
                     </div>
                 </div>
 
@@ -328,16 +373,21 @@
                 <div class="project-card">
                     <img src="./assets/ecom.png" alt="Project screenshot — E-Commerce App">
                     <div class="project-info">
-                        <h3>E-Commerce Application</h3>
+                        <h3>ShaKart - E-Commerce Applicationb</h3>
                         <div class="tech-tags">
                             <span class="tech-tag">React</span>
-                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">Django</span>
                             <span class="tech-tag">REST API</span>
+                            <span class="tech-tag purple">Bootstrap</span>
+                            <span class="tech-tag orange">PostgreSQL</span>
                         </div>
-                        <p>Fully functional e-commerce app with responsive UI, API integration for dynamic product
-                            details, cart management, and seamless state management using Redux.</p>
-                        <a href="https://github.com/shabeadtl/E-Commerce-Application---React-Redux" target="_blank"
-                            class="github-btn">View on GitHub</a>
+                        <p>
+                            A full-stack e-commerce app built with Django and PostgreSQL during internship — featuring
+                            product CRUD across 6 categories, multi-field search, user authentication, and a responsive
+                            Bootstrap 5 UI with dark mode.
+                        </p>
+                        <a href="https://github.com/shabeadtl/Django-E-com" target="_blank" class="github-btn">View on
+                            GitHub</a>
                     </div>
                 </div>
 
@@ -351,9 +401,9 @@
                             <span class="tech-tag">CSS</span>
                             <span class="tech-tag">JavaScript</span>
                         </div>
-                        <p>A lightweight web app that automates rent receipt generation with smart form logic,
-                            auto-generated receipt numbers, and a fully responsive design for quick, paperless rent
-                            management.</p>
+                        <p>A lightweight web app that automates rent receipt generation — smart form logic,
+                            auto-numbered receipts, and a fully responsive design for fast, paperless rent management.
+                        </p>
                         <a href="https://github.com/shabeadtl/Receipt-Generator-App-Rental-Management-.git"
                             target="_blank" class="github-btn">View on GitHub</a>
                     </div>

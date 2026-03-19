@@ -404,29 +404,34 @@ h1,
     background: rgba(13, 27, 42, 0.92);
     border-radius: 16px;
     padding: 2.8rem 2.4rem;
+    padding-bottom: 1.5rem;
     box-shadow: 0 8px 32px rgba(0, 255, 255, 0.04);
     border: 1px solid rgba(0, 255, 255, 0.06);
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .about-content {
     display: flex;
-    gap: 2.4rem;
+    gap: 2.2rem;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;        /* prevent wrapping on desktop */
+    justify-content: flex-start;  /* align left, not center */
 }
 
 .about-content img {
-    width: 210px;
-    height: 210px;
+    width: 220px;
+    height: 220px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--accent-1);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     box-shadow: 0 0 20px rgba(0, 240, 255, 0.12);
+    flex-shrink: 0;           /* prevent image from shrinking */
 }
 
+.about-text {
+    flex: 1;                  /* text takes remaining space */
+}
 .about-content img:hover {
     transform: scale(1.08);
     box-shadow: 0 0 40px rgba(0, 240, 255, 0.25);
@@ -443,6 +448,7 @@ h1,
 #skills {
     background: rgba(13, 27, 42, 0.92);
     border-radius: 16px;
+    margin-top: 3rem;
     padding: 2.8rem 2.4rem;
     box-shadow: 0 8px 32px rgba(0, 255, 255, 0.04);
     border: 1px solid rgba(0, 255, 255, 0.06);
@@ -651,6 +657,28 @@ h1,
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0, 240, 255, 0.15);
 }
+
+.view {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #334e50, #364742);
+    color: var(--accent-1);
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.view:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 240, 255, 0.3);
+}
+
 
 /* ========== EXPERIENCE ========== */
 #experience {
@@ -1003,8 +1031,10 @@ footer span {
     display: flex;
     justify-content: center;
     gap: 3rem;
-    margin-top: 2.5rem;
+    margin-top: 1.4rem;
+    padding-top: 1.5rem;
     flex-wrap: wrap;
+    border-top: 1px solid rgba(0, 255, 255, 0.06);
 }
 
 .stat-item {
